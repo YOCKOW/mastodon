@@ -16,6 +16,8 @@ media_host ||= host_to_url(ENV['S3_CLOUDFRONT_HOST'])
 media_host ||= host_to_url(ENV['S3_HOSTNAME']) if ENV['S3_ENABLED'] == 'true'
 media_host ||= assets_host
 
+google_analytics_host = 'https://www.googletagmanager.com'
+
 Rails.application.config.content_security_policy do |p|
   p.base_uri        :none
   p.default_src     :none
@@ -31,12 +33,12 @@ Rails.application.config.content_security_policy do |p|
     webpacker_urls = %w(ws http).map { |protocol| "#{protocol}#{Webpacker.dev_server.https? ? 's' : ''}://#{Webpacker.dev_server.host_with_port}" }
 
     p.connect_src :self, :data, :blob, assets_host, media_host, Rails.configuration.x.streaming_api_base_url, *webpacker_urls
-    p.script_src  :self, :unsafe_inline, :unsafe_eval, assets_host
+    p.script_src  :self, :unsafe_inline, :unsafe_eval, assets_host, google_analytics_host
     p.child_src   :self, :blob, assets_host
     p.worker_src  :self, :blob, assets_host
   else
     p.connect_src :self, :data, :blob, assets_host, media_host, Rails.configuration.x.streaming_api_base_url
-    p.script_src  :self, assets_host, "'wasm-unsafe-eval'"
+    p.script_src  :self, assets_host, google_analytics_host, "'wasm-unsafe-eval'"
     p.child_src   :self, :blob, assets_host
     p.worker_src  :self, :blob, assets_host
   end
@@ -49,7 +51,7 @@ end
 
 Rails.application.config.content_security_policy_nonce_generator = -> request { SecureRandom.base64(16) }
 
-Rails.application.config.content_security_policy_nonce_directives = %w(style-src)
+Rails.application.config.content_security_policy_nonce_directives = %w(script-src style-src)
 
 Rails.application.reloader.to_prepare do
   PgHero::HomeController.content_security_policy do |p|

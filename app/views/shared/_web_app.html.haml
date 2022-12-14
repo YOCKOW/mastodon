@@ -12,7 +12,7 @@
   -# Google Analytics for yMastodon/ひあるびどん
   / Google tag (gtag.js)
   %script{async: true, src: "https://www.googletagmanager.com/gtag/js?id=G-BQP8FC60BJ"}
-  :javascript
+  %script{nonce: request.content_security_policy_nonce}
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());

@@ -32,6 +32,7 @@
     = javascript_pack_tag "locale_#{I18n.locale}", crossorigin: 'anonymous'
     = csrf_meta_tags
     %meta{ name: 'style-nonce', content: request.content_security_policy_nonce }
+    %meta{ name: 'script-nonce', content: request.content_security_policy_nonce }
 
     = stylesheet_link_tag '/inert.css', skip_pipeline: true, media: 'all', id: 'inert-style'
     = stylesheet_link_tag custom_css_path, skip_pipeline: true, host: root_url, media: 'all'
