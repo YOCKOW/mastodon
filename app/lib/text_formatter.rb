@@ -7,7 +7,7 @@ class TextFormatter
 
   URL_PREFIX_REGEX = /\A(https?:\/\/(www\.)?|xmpp:)/.freeze
 
-  DEFAULT_REL = %w(nofollow noopener noreferrer).freeze
+  DEFAULT_REL = %w(nofollow noopener).freeze
 
   DEFAULT_OPTIONS = {
     multiline: true,

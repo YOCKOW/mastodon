@@ -89,7 +89,7 @@ RSpec.describe Account::Field, type: :model do
           expect(subject.verifiable?).to be false
         end
       end
-      
+
       context 'for text which is blank' do
         let(:value) { '' }
 
@@ -103,7 +103,7 @@ RSpec.describe Account::Field, type: :model do
       let(:local) { false }
 
       context 'for a link' do
-        let(:value) { '<a href="https://www.patreon.com/mastodon" target="_blank" rel="nofollow noopener noreferrer me"><span class="invisible">https://www.</span><span class="">patreon.com/mastodon</span><span class="invisible"></span></a>' }
+        let(:value) { '<a href="https://www.patreon.com/mastodon" target="_blank" rel="nofollow noopener me"><span class="invisible">https://www.</span><span class="">patreon.com/mastodon</span><span class="invisible"></span></a>' }
 
         it 'returns true' do
           expect(subject.verifiable?).to be true
@@ -111,7 +111,7 @@ RSpec.describe Account::Field, type: :model do
       end
 
       context 'for a link with misleading authentication' do
-        let(:value) { '<a href="https://google.com                                                                                            @h.43z.one" target="_blank" rel="nofollow noopener noreferrer me"><span class="invisible">https://</span><span class="">google.com</span><span class="invisible">                                                                                            @h.43z.one</span></a>' }
+        let(:value) { '<a href="https://google.com                                                                                            @h.43z.one" target="_blank" rel="nofollow noopener me"><span class="invisible">https://</span><span class="">google.com</span><span class="invisible">                                                                                            @h.43z.one</span></a>' }
 
         it 'returns false' do
           expect(subject.verifiable?).to be false
@@ -119,7 +119,7 @@ RSpec.describe Account::Field, type: :model do
       end
 
       context 'for HTML that has more than just a link' do
-        let(:value) { '<a href="https://google.com" target="_blank" rel="nofollow noopener noreferrer me"><span class="invisible">https://</span><span class="">google.com</span><span class="invisible"></span></a>                                                                                            @h.43z.one' }
+        let(:value) { '<a href="https://google.com" target="_blank" rel="nofollow noopener me"><span class="invisible">https://</span><span class="">google.com</span><span class="invisible"></span></a>                                                                                            @h.43z.one' }
 
         it 'returns false' do
           expect(subject.verifiable?).to be false
@@ -141,7 +141,7 @@ RSpec.describe Account::Field, type: :model do
           expect(subject.verifiable?).to be false
         end
       end
-      
+
       context 'for text which is blank' do
         let(:value) { '' }
 
