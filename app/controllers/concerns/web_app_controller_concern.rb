@@ -14,7 +14,7 @@ module WebAppControllerConcern
   end
 
   def set_referrer_policy_header
-    response.headers['Referrer-Policy'] = 'origin'
+    response.headers['Referrer-Policy'] = 'no-referrer-when-downgrade'
   end
 
   def redirect_unauthenticated_to_permalinks!
