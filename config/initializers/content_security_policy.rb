@@ -32,6 +32,14 @@ Rails.application.config.content_security_policy do |p|
 
   if Rails.env.development?
     webpacker_urls = %w(ws http).map { |protocol| "#{protocol}#{Webpacker.dev_server.https? ? 's' : ''}://#{Webpacker.dev_server.host_with_port}" }
+    if wp_public_host = Webpacker.dev_server.config.dev_server.fetch(:public)
+      webpacker_urls.push "https://#{wp_public_host}"
+      webpacker_urls.push "wss://#{wp_public_host}"
+      if !Rails.configuration.x.use_https
+        webpacker_urls.push "http://#{wp_public_host}"
+        webpacker_urls.push "ws://#{wp_public_host}"
+      end
+    end
 
     p.connect_src :self, :data, :blob, assets_host, media_host, Rails.configuration.x.streaming_api_base_url, *webpacker_urls, google_analytics_host
     p.script_src  :self, :unsafe_inline, :unsafe_eval, assets_host, google_tag_manager_host
