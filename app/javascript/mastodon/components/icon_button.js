@@ -131,7 +131,7 @@ export default class IconButton extends React.PureComponent {
 
     if (href && !this.prop) {
       contents = (
-        <a href={href} target='_blank' rel='noopener'>
+        <a href={href} target='_top' rel='noopener'>
           {contents}
         </a>
       );
