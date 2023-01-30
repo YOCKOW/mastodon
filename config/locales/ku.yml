@@ -927,7 +927,7 @@ ku:
     migrate_account: Derbasî ajimêreke din bibe
     migrate_account_html: Heke tu dixwazî ev ajimêr li ajimêreke cuda beralî bikî, tu dikarî <a href="%{path}">ji vir de saz bike</a>.
     or_log_in_with: An têketinê bike bi riya
-    privacy_policy_agreement_html: Min <a href="%{privacy_policy_path}" target="_blank">Politîka taybetiyê</a> xwend û dipejirînim
+    privacy_policy_agreement_html: Min <a href="%{privacy_policy_path}" target="_top">Politîka taybetiyê</a> xwend û dipejirînim
     providers:
       cas: CAS
       saml: SAML

@@ -8,10 +8,10 @@ RSpec.describe StatusesHelper, type: :helper do
       expect(helper.stream_link_target).to be_nil
     end
 
-    it 'returns _blank if it is an embedded view' do
+    it 'returns _top if it is an embedded view' do
       set_embedded_view
 
-      expect(helper.stream_link_target).to eq '_blank'
+      expect(helper.stream_link_target).to eq '_top'
     end
   end
 

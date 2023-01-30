@@ -934,7 +934,7 @@ de:
     migrate_account: Ziehe zu einem anderen Konto um
     migrate_account_html: Wenn du wünschst, dieses Konto zu einem anderen umzuziehen, kannst du <a href="%{path}">dies hier einstellen</a>.
     or_log_in_with: Oder anmelden mit
-    privacy_policy_agreement_html: Ich habe die <a href="%{privacy_policy_path}" target="_blank">Datenschutzbestimmungen</a> gelesen und stimme ihnen zu
+    privacy_policy_agreement_html: Ich habe die <a href="%{privacy_policy_path}" target="_top">Datenschutzbestimmungen</a> gelesen und stimme ihnen zu
     providers:
       cas: CAS
       saml: SAML

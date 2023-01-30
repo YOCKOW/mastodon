@@ -143,7 +143,7 @@ class AccountCard extends ImmutablePureComponent {
   }
 
   handleEditProfile = () => {
-    window.open('/settings/profile', '_blank');
+    window.open('/settings/profile', '_top');
   }
 
   render() {

@@ -81,7 +81,7 @@ class Sanitize
       add_attributes: {
         'a' => {
           'rel' => 'nofollow noopener',
-          'target' => '_blank',
+          'target' => '_top',
         },
       },
 

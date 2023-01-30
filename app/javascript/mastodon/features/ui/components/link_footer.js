@@ -61,7 +61,7 @@ class LinkFooter extends React.PureComponent {
           {canInvite && (
             <>
               {' · '}
-              <a key='invites' href='/invites' target='_blank'><FormattedMessage id='footer.invite' defaultMessage='Invite people' /></a>
+              <a key='invites' href='/invites' target='_top'><FormattedMessage id='footer.invite' defaultMessage='Invite people' /></a>
             </>
           )}
           {canProfileDirectory && (
@@ -77,13 +77,13 @@ class LinkFooter extends React.PureComponent {
         <p>
           <strong>Mastodon</strong>:
           {' '}
-          <a href='https://joinmastodon.org' target='_blank'><FormattedMessage id='footer.about' defaultMessage='About' /></a>
+          <a href='https://joinmastodon.org' target='_top'><FormattedMessage id='footer.about' defaultMessage='About' /></a>
           {' · '}
-          <a href='https://joinmastodon.org/apps' target='_blank'><FormattedMessage id='footer.get_app' defaultMessage='Get the app' /></a>
+          <a href='https://joinmastodon.org/apps' target='_top'><FormattedMessage id='footer.get_app' defaultMessage='Get the app' /></a>
           {' · '}
           <Link to='/keyboard-shortcuts'><FormattedMessage id='footer.keyboard_shortcuts' defaultMessage='Keyboard shortcuts' /></Link>
           {' · '}
-          <a href={source_url} rel='noopener' target='_blank'><FormattedMessage id='footer.source_code' defaultMessage='View source code' /></a>
+          <a href={source_url} rel='noopener' target='_top'><FormattedMessage id='footer.source_code' defaultMessage='View source code' /></a>
           {' · '}
           v{version}
         </p>

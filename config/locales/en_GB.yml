@@ -501,7 +501,7 @@ en_GB:
   auth:
     apply_for_account: Request an invite
     change_password: Password
-    checkbox_agreement_html: I agree to the <a href="%{rules_path}" target="_blank">server rules</a> and <a href="%{terms_path}" target="_blank">terms of service</a>
+    checkbox_agreement_html: I agree to the <a href="%{rules_path}" target="_top">server rules</a> and <a href="%{terms_path}" target="_top">terms of service</a>
     confirm_email: Confirm email
     delete_account: Delete account
     delete_account_html: If you wish to delete your account, you can <a href="%{path}">proceed here</a>. You will be asked for confirmation.
@@ -767,7 +767,7 @@ en_GB:
   remote_follow:
     acct: Enter your username@domain you want to act from
     missing_resource: Could not find the required redirect URL for your account
-    no_account_html: Don't have an account? You can <a href='%{sign_up_path}' target='_blank'>sign up here</a>
+    no_account_html: Don't have an account? You can <a href='%{sign_up_path}' target='_top'>sign up here</a>
     proceed: Proceed to follow
     prompt: 'You are going to follow:'
     reason_html: "<strong>Why is this step necessary?</strong> <code>%{instance}</code> might not be the server where you are registered, so we need to redirect you to your home server first."

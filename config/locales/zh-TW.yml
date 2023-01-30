@@ -918,7 +918,7 @@ zh-TW:
     migrate_account: 轉移到另一個帳號
     migrate_account_html: 如果您希望引導他人跟隨另一個帳號，請 <a href="%{path}">到這裡設定</a>。
     or_log_in_with: 或透過其他方式登入
-    privacy_policy_agreement_html: 我已閱讀且同意 <a href="%{privacy_policy_path}" target="_blank">隱私權政策</a>
+    privacy_policy_agreement_html: 我已閱讀且同意 <a href="%{privacy_policy_path}" target="_top">隱私權政策</a>
     providers:
       cas: CAS
       saml: SAML

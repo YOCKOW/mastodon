@@ -934,7 +934,7 @@ fi:
     migrate_account: Muuta toiseen tiliin
     migrate_account_html: Jos haluat ohjata tämän tilin toiseen tiliin, voit <a href="%{path}">asettaa toisen tilin tästä</a>.
     or_log_in_with: Tai käytä kirjautumiseen
-    privacy_policy_agreement_html: Olen lukenut ja hyväksynyt <a href="%{privacy_policy_path}" target="_blank">tietosuojakäytännön</a>
+    privacy_policy_agreement_html: Olen lukenut ja hyväksynyt <a href="%{privacy_policy_path}" target="_top">tietosuojakäytännön</a>
     providers:
       cas: CAS
       saml: SAML
