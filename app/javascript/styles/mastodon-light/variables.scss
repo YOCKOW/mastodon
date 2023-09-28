@@ -2,10 +2,16 @@
 $black: #000000;
 $white: #ffffff;
 
-$classic-base-color: #222f22;
-$classic-primary-color: #a7d6a7;
-$classic-secondary-color: #dae8d9;
-$classic-highlight-color: #50d354;
+$classic-base-color: #283728;
+$classic-primary-color: #a0c89b;
+$classic-secondary-color: #dce8d9;
+$classic-highlight-color: #85fa95;
+
+$blurple-600: #563acc; // Iris
+$blurple-500: #6364ff; // Brand purple
+$blurple-300: #858afa; // Faded Blue
+$grey-600: #4e4c5a; // Trout
+$grey-100: #dadaf3; // Topaz
 
 // Differences
 $success-green: lighten(#3c754d, 8%);
@@ -14,20 +20,27 @@ $base-overlay-background: $white !default;
 $valid-value-color: $success-green !default;
 
 $ui-base-color: $classic-secondary-color !default;
-$ui-base-lighter-color: #b4cfb0;
-$ui-primary-color: #9fed9b;
+$ui-base-lighter-color: #b6cfb0;
+$ui-primary-color: #aded9b;
 $ui-secondary-color: $classic-base-color !default;
 $ui-highlight-color: $classic-highlight-color !default;
+
+$ui-button-secondary-color: $grey-600 !default;
+$ui-button-secondary-border-color: $grey-600 !default;
+$ui-button-secondary-focus-color: $white !default;
+
+$ui-button-tertiary-color: $blurple-500 !default;
+$ui-button-tertiary-border-color: $blurple-500 !default;
 
 $primary-text-color: $black !default;
 $darker-text-color: $classic-base-color !default;
 $highlight-text-color: darken($ui-highlight-color, 8%) !default;
 $dark-text-color: #455d44;
-$action-button-color: #658460;
+$action-button-color: #608460;
 
 $inverted-text-color: $black !default;
 $lighter-text-color: $classic-base-color !default;
-$light-text-color: #465d44;
+$light-text-color: #455d44;
 
 // Newly added colors
 $account-background-color: $white !default;
