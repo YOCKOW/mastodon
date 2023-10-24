@@ -474,7 +474,7 @@ hy:
     logout: Դուրս գալ
     migrate_account: Տեղափոխուել այլ հաշիւ
     or_log_in_with: Կամ մուտք գործել օգտագործելով՝
-    privacy_policy_agreement_html: Ես կարդացել եւ ընդունել եմ <a href="%{privacy_policy_path}" target="_blank">գաղնիութեան քաղաքականութիւնը</a>
+    privacy_policy_agreement_html: Ես կարդացել եւ ընդունել եմ <a href="%{privacy_policy_path}" target="_top">գաղնիութեան քաղաքականութիւնը</a>
     progress:
       confirm: Փոստի հաստատում
       details: Ձեր տուեալները
