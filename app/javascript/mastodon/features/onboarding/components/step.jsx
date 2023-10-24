@@ -25,7 +25,7 @@ const Step = ({ label, description, icon, completed, onClick, href }) => {
 
   if (href) {
     return (
-      <a href={href} onClick={onClick} target='_blank' rel='noopener' className='onboarding__steps__item'>
+      <a href={href} onClick={onClick} target='_top' rel='noopener' className='onboarding__steps__item'>
         {content}
       </a>
     );

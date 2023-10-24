@@ -63,7 +63,7 @@ Rails.application.config.content_security_policy do |p|
   if Rails.env.development?
     webpacker_public_host = ENV.fetch('WEBPACKER_DEV_SERVER_PUBLIC', Webpacker.config.dev_server[:public])
     webpacker_urls = %w(ws http).map { |protocol| "#{protocol}#{Webpacker.dev_server.https? ? 's' : ''}://#{webpacker_public_host}" }
-    if !Rails.configuration.x.use_https
+    unless Rails.configuration.x.use_https
       webpacker_urls.push "http://#{webpacker_public_host}"
       webpacker_urls.push "ws://#{webpacker_public_host}"
     end
