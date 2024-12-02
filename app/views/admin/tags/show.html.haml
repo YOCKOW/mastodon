@@ -6,7 +6,7 @@
     .time-period
       = date_range(@time_period)
 
-  = link_to t('admin.tags.open'), tag_url(@tag), class: 'button', target: '_top', rel: 'noopener'
+  = link_to t('admin.tags.open'), tag_url(@tag), class: 'button', target: '_blank', rel: 'noopener'
 
 - if current_user.can?(:view_dashboard)
   .dashboard
@@ -19,7 +19,7 @@
                               params: { id: @tag.id },
                               rel: 'noopener',
                               start_at: @time_period.first,
-                              target: '_top'
+                              target: '_blank'
     .dashboard__item
       = react_admin_component :counter,
                               end_at: @time_period.last,

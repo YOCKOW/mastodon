@@ -120,7 +120,7 @@ class DropdownMenu extends PureComponent {
       return <li key={`sep-${i}`} className='dropdown-menu__separator' />;
     }
 
-    const { text, href = '#', target = '_top', method, dangerous } = option;
+    const { text, href = '#', target = '_blank', method, dangerous } = option;
 
     return (
       <li className={classNames('dropdown-menu__item', { 'dropdown-menu__item--dangerous': dangerous })} key={`${text}-${i}`}>

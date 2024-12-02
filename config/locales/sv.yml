@@ -1115,7 +1115,7 @@ sv:
     migrate_account: Flytta till ett annat konto
     migrate_account_html: Om du vill omdirigera detta konto till ett annat, kan du <a href="%{path}">konfigurera det här</a>.
     or_log_in_with: Eller logga in med
-    privacy_policy_agreement_html: Jag har läst och godkänner <a href="%{privacy_policy_path}" target="_top">integritetspolicyn</a>
+    privacy_policy_agreement_html: Jag har läst och godkänner <a href="%{privacy_policy_path}" target="_blank">integritetspolicyn</a>
     progress:
       confirm: Bekräfta e-postadress
       details: Dina uppgifter

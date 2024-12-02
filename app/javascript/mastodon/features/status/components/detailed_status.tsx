@@ -236,7 +236,7 @@ export const DetailedStatus: React.FC<{
         <a
           className='detailed-status__application'
           href={status.getIn(['application', 'website'])}
-          target='_top'
+          target='_blank'
           rel='noopener'
         >
           {status.getIn(['application', 'name'])}
@@ -357,7 +357,7 @@ export const DetailedStatus: React.FC<{
             <a
               className='detailed-status__datetime'
               href={`/@${status.getIn(['account', 'acct'])}/${status.get('id')}`}
-              target='_top'
+              target='_blank'
               rel='noopener'
             >
               <FormattedDate

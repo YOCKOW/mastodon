@@ -94,7 +94,7 @@ export const NotificationAdminReport: React.FC<{
   return (
     <a
       href={`/admin/reports/${report.id}`}
-      target='_top'
+      target='_blank'
       rel='noopener'
       className={classNames(
         'notification-group notification-group--link notification-group--admin-report focusable',

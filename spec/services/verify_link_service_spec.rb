@@ -36,7 +36,7 @@ RSpec.describe VerifyLinkService do
         <<~HTML
           <!doctype html>
           <body>
-            <a href="#{ActivityPub::TagManager.instance.url_for(account)}" rel="me noopener" target="_top">Follow me on Mastodon</a>
+            <a href="#{ActivityPub::TagManager.instance.url_for(account)}" rel="me noopener" target="_blank">Follow me on Mastodon</a>
           </body>
         HTML
       end
@@ -120,7 +120,7 @@ RSpec.describe VerifyLinkService do
             <link type="text/html" rel="me" />
           </head>
           <body>
-            <a rel="me" target="_top">Follow me on Mastodon</a>
+            <a rel="me" target="_blank">Follow me on Mastodon</a>
           </body>
         HTML
       end

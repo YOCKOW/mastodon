@@ -61,7 +61,7 @@ module StatusesHelper
   end
 
   def stream_link_target
-    embedded_view? ? '_top' : nil
+    embedded_view? ? '_blank' : nil
   end
 
   def visibility_icon(status)
