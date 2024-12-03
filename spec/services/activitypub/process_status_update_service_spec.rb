@@ -54,7 +54,7 @@ RSpec.describe ActivityPub::ProcessStatusUpdateService do
           id: 'foo',
           type: 'Note',
           updated: '2021-09-08T22:39:25Z',
-          content: '<p>Hello world <a href="https://joinmastodon.org">joinmastodon.org</a></p>',
+          content: '<p>Hello world <a href="https://joinmastodon.org" rel="noreferrer">joinmastodon.org</a></p>',
         }
       end
 

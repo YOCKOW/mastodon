@@ -16,7 +16,7 @@ export const TimelineHint: React.FC<Props> = ({
   <div className={classNames('timeline-hint', className)}>
     <p>{message}</p>
 
-    <a href={url} target='_blank' rel='noopener'>
+    <a href={url} target='_blank' rel='noopener noreferrer'>
       {label}
     </a>
   </div>

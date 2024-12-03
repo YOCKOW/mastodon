@@ -132,7 +132,7 @@ export class IconButton extends PureComponent<Props, States> {
 
     if (href != null) {
       contents = (
-        <a href={href} target='_blank' rel='noopener'>
+        <a href={href} target='_blank' rel='noopener noreferrer'>
           {contents}
         </a>
       );

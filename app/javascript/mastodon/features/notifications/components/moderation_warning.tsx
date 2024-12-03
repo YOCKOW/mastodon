@@ -75,7 +75,7 @@ export const ModerationWarning: React.FC<Props> = ({
         <a
           href={`/disputes/strikes/${id}`}
           target='_blank'
-          rel='noopener'
+          rel='noopener noreferrer'
           className='link-button'
         >
           <FormattedMessage
