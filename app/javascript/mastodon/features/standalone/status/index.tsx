@@ -60,8 +60,8 @@ const Embed: React.FC<{ id: string }> = ({ id }) => {
       <a
         className='embed__overlay'
         href={permalink}
-        target='_top'
-        rel='noopener'
+        target='_blank'
+        rel='noreferrer noopener'
         aria-label=''
       />
     </div>

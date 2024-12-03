@@ -26,7 +26,7 @@ export const Step = ({ label, description, icon, iconComponent, completed, onCli
 
   if (href) {
     return (
-      <a href={href} onClick={onClick} target='_top' rel='noopener' className='onboarding__steps__item'>
+      <a href={href} onClick={onClick} target='_blank' rel='noopener' className='onboarding__steps__item'>
         {content}
       </a>
     );

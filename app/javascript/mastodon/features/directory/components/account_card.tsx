@@ -105,7 +105,7 @@ export const AccountCard: React.FC<{ accountId: string }> = ({ accountId }) => {
   }, [account, dispatch]);
 
   const handleEditProfile = useCallback(() => {
-    window.open('/settings/profile', '_top');
+    window.open('/settings/profile', '_blank');
   }, []);
 
   if (!account) return null;
