@@ -87,8 +87,8 @@ export const FollowButton: React.FC<{
     return (
       <a
         href='/settings/profile'
-        target='_top'
-        rel='noopener'
+        target='_blank'
+        rel='noreferrer noopener'
         className='button button-secondary'
       >
         {label}

@@ -143,7 +143,7 @@ class Header extends ImmutablePureComponent {
   };
 
   openEditProfile = () => {
-    window.open('/settings/profile', '_top');
+    window.open('/settings/profile', '_blank');
   };
 
   isStatusesPageActive = (match, location) => {
@@ -421,7 +421,7 @@ class Header extends ImmutablePureComponent {
 
         <div className='account__header__bar'>
           <div className='account__header__tabs'>
-            <a className='avatar' href={account.get('avatar')} rel='noopener' target='_top' onClick={this.handleAvatarClick}>
+            <a className='avatar' href={account.get('avatar')} rel='noopener noreferrer' target='_blank' onClick={this.handleAvatarClick}>
               <Avatar account={suspended || hidden ? undefined : account} size={90} />
             </a>
 
