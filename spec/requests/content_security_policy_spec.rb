@@ -29,7 +29,7 @@ RSpec.describe 'Content-Security-Policy' do
       form-action 'none'
       frame-ancestors 'none'
       frame-src 'self' https:
-      img-src 'self' data: blob: https://cb6e6126.ngrok.io
+      img-src 'self' data: blob: https://cb6e6126.ngrok.io https://www.googletagmanager.com
       manifest-src 'self' https://cb6e6126.ngrok.io
       media-src 'self' data: https://cb6e6126.ngrok.io
       script-src 'self' https://cb6e6126.ngrok.io https://www.googletagmanager.com 'wasm-unsafe-eval' 'nonce-ZbA+JmE7+bK8F5qvADZHuQ=='
