@@ -3,11 +3,7 @@ lv:
   simple_form:
     hints:
       account:
-<<<<<<< HEAD
-        attribution_domains_as_text: Viens katrā līnijā. Aizsargā no nepatiesa attiecinājuma.
-=======
         attribution_domains: Viens katrā līnijā. Aizsargā no nepatiesa attiecinājuma.
->>>>>>> v4.4.2
         discoverable: Tavas publiskās ziņas un profils var tikt piedāvāti vai ieteikti dažādās Mastodon vietās, un tavs profils var tikt ieteikts citiem lietotājiem.
         display_name: Tavs pilnais vārds vai tavs joku vārds.
         fields: Tava mājas lapa, vietniekvārdi, vecums, viss, ko vēlies.
@@ -29,11 +25,7 @@ lv:
         type_html: Izvēlies, ko darīt ar <strong>%{acct}</strong>
         types:
           disable: Neļauj lietotājam izmantot savu kontu, bet neizdzēs vai neslēp tā saturu.
-<<<<<<< HEAD
-          none: Izmanto šo, lai nosūtītu lietotājam brīdinājumu, neradot nekādas citas darbības.
-=======
           none: Šis ir izmantojams, lai nosūtītu lietotājam brīdinājumu bez jebkādu citu darbību izraisīšanas.
->>>>>>> v4.4.2
           sensitive: Visus šī lietotāja informācijas nesēju pielikumus uzspiesti atzīmēt kā jūtīgus.
           silence: Neļaut lietotājam veikt ierakstus ar publisku redzamību, paslēpt viņa ierakstus un paziņojumus no cilvēkiem, kas tam neseko. Tiek aizvērti visi ziņojumi par šo kontu.
           suspend: Novērs jebkādu mijiedarbību no šī konta vai uz to un dzēs tā saturu. Atgriežams 30 dienu laikā. Tiek aizvērti visi šī konta pārskati.
@@ -64,10 +56,7 @@ lv:
         scopes: Kuriem API lietotnei būs ļauts piekļūt. Ja atlasa augstākā līmeņa tvērumu, nav nepieciešamas atlasīt atsevišķus.
         setting_aggregate_reblogs: Nerādīt jaunus izcēlumus ziņām, kas nesen tika palielinātas (ietekmē tikai nesen saņemtos palielinājumus)
         setting_always_send_emails: Parasti e-pasta paziņojumi netiek sūtīti, kad aktīvi izmantojat Mastodon
-<<<<<<< HEAD
-=======
         setting_default_quote_policy: Pieminētajiem lietotājiem vienmēr ir atļauts citēt. Šis iestatījums stāsies spēkā tikai nākamo Mastodon versiju ierakstiem. Bet jūs tik un tā variet iestatīt savu izvēli, kamēr notiek ieviešana
->>>>>>> v4.4.2
         setting_default_sensitive: Pēc noklusējuma jūtīgi informācijas nesēji ir paslēpti, un tos var atklāt ar klikšķi
         setting_display_media_default: Paslēpt informācijas nesējus, kas atzīmēti kā jūtīgi
         setting_display_media_hide_all: Vienmēr slēpt multividi
@@ -101,10 +90,7 @@ lv:
         favicon: WEBP, PNG, GIF vai JPG. Aizstāj noklusējuma Mastodon favikonu ar pielāgotu.
         mascot: Ignorē ilustrāciju uzlabotajā tīmekļa saskarnē.
         media_cache_retention_period: Informācijas nesēju datnes no ierakstiem, kurus ir veikuši attālie lietotāji, tiek kešoti šajā serverī. Kad ir iestatīta apstiprinoša vērtība, informācijas nesēji tiks izdzēsti pēc norādītā dienu skaita. Ja informācijas nesēju dati tiks pieprasīti pēc tam, kad tie tika izdzēsti, tie tiks atkārtoti lejupielādēti, ja avota saturs joprojām būs pieejams. Saišu priekšskatījuma karšu vaicājumu biežuma ierobežojumu dēļ ir ieteicams iestatīt šo vērtību vismaz 14 dienas vai saišu priekšskatījuma kartes netiks atjauninātas pēc pieprasījuma pirms tā laika.
-<<<<<<< HEAD
-=======
         min_age: Lietotājiem tiks lūgts apstiprināt viņu dzimšanas datumu reģistrācijas laikā
->>>>>>> v4.4.2
         peers_api_enabled: Domēna vārdu saraksts, ar kuriem šis serveris ir saskāries fediversā. Šeit nav iekļauti dati par to, vai tu veic federāciju ar noteiktu serveri, tikai tavs serveris par to zina. To izmanto dienesti, kas apkopo statistiku par federāciju vispārīgā nozīmē.
         profile_directory: Profilu direktorijā ir uzskaitīti visi lietotāji, kuri ir izvēlējušies būt atklājami.
         require_invite_text: Ja nepieciešama pašrocīga apstiprināšana, lai pierakstītos, teksta “Kāpēc vēlies pievienoties?” ievade jāpadara par nepieciešamu, nevis izvēles
@@ -140,11 +126,7 @@ lv:
         hint: Izvēles. Sniedz vairāk informācijas par noteikumu
         text: Jāapraksta nosacījums vai prasība šī servera lietotājiem. Jāmēģina to veidot īsu un vienkāršu
       sessions:
-<<<<<<< HEAD
-        otp: 'Jāievada tālruņa lietotnes izveidots divpakāpju kods vai jāizmanto viens no saviem atkopes kodie:'
-=======
         otp: 'Jāievada tālruņa lietotnes izveidots divpakāpju kods vai jāizmanto viens no saviem atkopes kodiem:'
->>>>>>> v4.4.2
         webauthn: Ja tā ir USB atslēga, noteikti ievieto to un, ja nepieciešams, pieskaries tai.
       settings:
         indexable: Tava profila lapa var tikt parādīta Google, Bing un citu meklēšanas dzinēju rezultātos.
@@ -174,11 +156,7 @@ lv:
         url: Kur notikumi tiks nosūtīti
     labels:
       account:
-<<<<<<< HEAD
-        attribution_domains_as_text: Tīmekļvietnes, kurām ir tiesības uzskaitīt Tevi
-=======
         attribution_domains: Tīmekļvietnes, kurām ir tiesības uzskaitīt Tevi
->>>>>>> v4.4.2
         discoverable: Funkcijas profils un ziņas atklāšanas algoritmos
         fields:
           name: Marķējums
@@ -245,10 +223,7 @@ lv:
         setting_boost_modal: Rādīt apstiprinājuma dialogu pirms izcelšanas
         setting_default_language: Publicēšanas valoda
         setting_default_privacy: Publicēšanas privātums
-<<<<<<< HEAD
-=======
         setting_default_quote_policy: Kas var citēt
->>>>>>> v4.4.2
         setting_default_sensitive: Vienmēr atzīmēt informācijas nesējus kā jūtīgus
         setting_delete_modal: Parādīt apstiprinājuma dialogu pirms ziņas dzēšanas
         setting_disable_hover_cards: Atspējot profila priekšskatījumu pēc kursora novietošanas

@@ -875,15 +875,10 @@ fr:
       open: Ouvrir le message
       original_status: Message original
       reblogs: Partages
-<<<<<<< HEAD
-      status_changed: Message modifié
-      title: Messages du compte
-=======
       replied_to_html: Répondu à %{acct_link}
       status_changed: Message modifié
       status_title: Posté par @%{name}
       title: Messages du compte - @%{name}
->>>>>>> v4.4.2
       trending: Tendances
       view_publicly: Afficher de manière publique
       visibility: Visibilité

@@ -3,11 +3,7 @@ eu:
   simple_form:
     hints:
       account:
-<<<<<<< HEAD
-        attribution_domains_as_text: Lerroko bat. Atribuzio faltsuetatik babesten ditu.
-=======
         attribution_domains: Lerroko bat. Atribuzio faltsuetatik babesten ditu.
->>>>>>> v4.4.2
         discoverable: Zure bidalketa publikoak eta profila nabarmendu edo gomendatu egin daitezke Mastodon-go hainbat eremutan eta zure profila beste erabiltzaile batzuei iradoki dakieke.
         display_name: Zure izena edo ezizena.
         fields: Zure webgunea, izenordainak, adina, nahi duzun guztia.
@@ -159,11 +155,7 @@ eu:
         url: Nora bidaliko diren gertaerak
     labels:
       account:
-<<<<<<< HEAD
-        attribution_domains_as_text: Akreditatzeko baimendutako webguneak
-=======
         attribution_domains: Akreditatzeko baimendutako webguneak
->>>>>>> v4.4.2
         discoverable: Ezagutarazi profila eta bidalketak bilaketa algoritmoetan
         fields:
           name: Etiketa
@@ -336,14 +328,11 @@ eu:
         name: Traola
         trendable: Baimendu traola hau joeretan agertzea
         usable: Baimendu bidalketek traola lokal hau erabiltzea
-<<<<<<< HEAD
-=======
       terms_of_service:
         changelog: Zer aldatu da?
         text: Zerbitzuaren baldintzak
       terms_of_service_generator:
         domain: Domeinua
->>>>>>> v4.4.2
       user:
         date_of_birth_1i: Eguna
         date_of_birth_2i: Hilabetea
