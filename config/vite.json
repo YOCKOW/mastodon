@@ -13,7 +13,6 @@
   "development": {
     "autoBuild": true,
     "publicOutputDir": "packs-dev",
-    "hostname": "Mastodon.YOCKOW.local",
     "port": 3036
   },
   "test": {

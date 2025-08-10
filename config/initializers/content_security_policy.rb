@@ -34,8 +34,7 @@ Rails.application.config.content_security_policy do |p|
   p.worker_src :self, :blob, assets_host
 
   if Rails.env.development?
-
-    vite_public_host = ENV.fetch('VITE_DEV_SERVER_PUBLIC', "#{ViteRuby.config.hostname}:#{ViteRuby.config.port}")
+    vite_public_host = ENV.fetch('VITE_DEV_SERVER_PUBLIC', "localhost:#{ViteRuby.config.port}")
     front_end_build_urls = %w(ws http).map { |protocol| "#{protocol}#{'s' if ViteRuby.config.https}://#{vite_public_host}" }
     unless Rails.configuration.x.use_https
       front_end_build_urls.push "http://#{vite_public_host}"
