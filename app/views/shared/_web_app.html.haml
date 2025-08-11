@@ -1,15 +1,13 @@
+- content_for :body_classes, 'app-body'
 - content_for :header_tags do
   - if user_signed_in?
-    = preload_pack_asset 'features/compose.js'
-    = preload_pack_asset 'features/home_timeline.js'
-    = preload_pack_asset 'features/notifications.js'
     %meta{ name: 'initialPath', content: request.path }
 
-  %meta{ name: 'applicationServerKey', content: Rails.configuration.x.vapid_public_key }
+  %meta{ name: 'applicationServerKey', content: Rails.configuration.x.vapid.public_key }
 
   = render_initial_state
-  = javascript_pack_tag 'application', crossorigin: 'anonymous'
-  = javascript_pack_tag 'yockow-customization', crossorigin: 'anonymous'
+  = vite_typescript_tag 'application.ts', crossorigin: 'anonymous'
+  = vite_typescript_tag 'yockow-customization.ts', crossorigin: 'anonymous'
 
   -# Google Analytics for yMastodon/ひあるびどん
   / Google tag (gtag.js)

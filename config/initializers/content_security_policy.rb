@@ -34,20 +34,22 @@ Rails.application.config.content_security_policy do |p|
   p.worker_src :self, :blob, assets_host
 
   if Rails.env.development?
-    webpacker_public_host = ENV.fetch('WEBPACKER_DEV_SERVER_PUBLIC', Webpacker.config.dev_server[:public])
-    front_end_build_urls = %w(ws http).map { |protocol| "#{protocol}#{Webpacker.dev_server.https? ? 's' : ''}://#{webpacker_public_host}" }
+    vite_public_host = ENV.fetch('VITE_DEV_SERVER_PUBLIC', "localhost:#{ViteRuby.config.port}")
+    front_end_build_urls = %w(ws http).map { |protocol| "#{protocol}#{'s' if ViteRuby.config.https}://#{vite_public_host}" }
     unless Rails.configuration.x.use_https
-      front_end_build_urls.push "http://#{webpacker_public_host}"
-      front_end_build_urls.push "ws://#{webpacker_public_host}"
+      front_end_build_urls.push "http://#{vite_public_host}"
+      front_end_build_urls.push "ws://#{vite_public_host}"
     end
 
-    p.connect_src :self, :data, :blob, assets_host, *media_hosts, Rails.configuration.x.streaming_api_base_url, *front_end_build_urls, google_analytics_host
+    p.connect_src :self, :data, :blob, *media_hosts, Rails.configuration.x.streaming_api_base_url, *front_end_build_urls, google_analytics_host
     p.script_src  :self, :unsafe_inline, :unsafe_eval, assets_host, google_tag_manager_host
     p.frame_src   :self, :https, :http
+    p.style_src   :self, assets_host, :unsafe_inline
   else
-    p.connect_src :self, :data, :blob, assets_host, *media_hosts, Rails.configuration.x.streaming_api_base_url, google_analytics_host
+    p.connect_src :self, :data, :blob, *media_hosts, Rails.configuration.x.streaming_api_base_url, google_analytics_host
     p.script_src  :self, assets_host, google_tag_manager_host, "'wasm-unsafe-eval'"
     p.frame_src   :self, :https
+    p.style_src   :self, assets_host
   end
 end
 
