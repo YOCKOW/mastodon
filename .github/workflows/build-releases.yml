@@ -14,7 +14,7 @@ jobs:
     with:
       file_to_build: Dockerfile
       push_to_images: |
-        ghcr.io/YOCKOW/mastodon
+        ghcr.io/yockow/mastodon
       # Do not use cache when building releases, so apt update is always ran and the release always contain the latest packages
       cache: false
       # Only tag with latest when ran against the latest stable branch
@@ -31,7 +31,7 @@ jobs:
     with:
       file_to_build: streaming/Dockerfile
       push_to_images: |
-        ghcr.io/YOCKOW/mastodon-streaming
+        ghcr.io/yockow/mastodon-streaming
       # Do not use cache when building releases, so apt update is always ran and the release always contain the latest packages
       cache: false
       # Only tag with latest when ran against the latest stable branch
