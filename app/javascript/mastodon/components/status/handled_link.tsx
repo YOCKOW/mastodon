@@ -27,18 +27,16 @@ export const HandledLink: FC<HandledLinkProps & ComponentProps<'a'>> = ({
 }) => {
   // Handle hashtags
   if (
-    (text.startsWith('#') ||
-      prevText?.endsWith('#') ||
-      text.startsWith('＃') ||
-      prevText?.endsWith('＃')) &&
-    !text.includes('%')
+    text.startsWith('#') ||
+    prevText?.endsWith('#') ||
+    text.startsWith('＃') ||
+    prevText?.endsWith('＃')
   ) {
     const hashtag = text.slice(1).trim();
-
     return (
       <Link
         className={classNames('mention hashtag', className)}
-        to={`/tags/${encodeURIComponent(hashtag)}`}
+        to={`/tags/${hashtag}`}
         rel='tag'
         data-menu-hashtag={hashtagAccountId}
       >
@@ -75,7 +73,7 @@ export const HandledLink: FC<HandledLinkProps & ComponentProps<'a'>> = ({
       title={href}
       className={classNames('unhandled-link', className)}
       target='_blank'
-      rel='noopener'
+      rel='noreferrer noopener'
       translate='no'
     >
       {children}

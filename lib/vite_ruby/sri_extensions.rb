@@ -107,7 +107,6 @@ module ViteRails::TagHelpers::IntegrityExtension
             stylesheet,
             integrity: vite_manifest.integrity_hash_for_file(stylesheet),
             media: media,
-            crossorigin: crossorigin,
             **options
           )
         end

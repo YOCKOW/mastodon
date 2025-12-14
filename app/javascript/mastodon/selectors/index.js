@@ -32,11 +32,7 @@ function getStatusResultFunction(
     };
   }
 
-  // When a status is loading, a `isLoading` property is set
-  // A status can be loading because it is not known yet (in which case it will only contain `isLoading`)
-  // or because it is being re-fetched; in the latter case, `visibility` will always be set to a non-empty
-  // string.
-  if (statusBase.get('isLoading') && !statusBase.get('visibility')) {
+  if (statusBase.get('isLoading') && !statusBase.get('content')) {
     return {
       status: null,
       loadingState: 'loading',

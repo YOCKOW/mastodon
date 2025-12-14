@@ -9,6 +9,7 @@ import { me, reduceMotion } from 'mastodon/initial_state';
 import ready from 'mastodon/ready';
 import { store } from 'mastodon/store';
 
+import { initializeEmoji } from './features/emoji';
 import { isProduction, isDevelopment } from './utils/environment';
 
 function main() {
@@ -29,7 +30,6 @@ function main() {
       });
     }
 
-    const { initializeEmoji } = await import('./features/emoji/index');
     initializeEmoji();
 
     const root = createRoot(mountNode);

@@ -1,7 +1,6 @@
 import { initialState } from '@/mastodon/initial_state';
 
 import { toSupportedLocale } from './locale';
-import type { LocaleOrCustom } from './types';
 import { emojiLogger } from './utils';
 // eslint-disable-next-line import/default -- Importing via worker loader.
 import EmojiWorker from './worker?worker&inline';
@@ -25,17 +24,19 @@ export function initializeEmoji() {
   }
 
   if (worker) {
+    // Assign worker to const to make TS happy inside the event listener.
+    const thisWorker = worker;
     const timeoutId = setTimeout(() => {
       log('worker is not ready after timeout');
       worker = null;
       void fallbackLoad();
     }, WORKER_TIMEOUT);
-    worker.addEventListener('message', (event: MessageEvent<string>) => {
+    thisWorker.addEventListener('message', (event: MessageEvent<string>) => {
       const { data: message } = event;
       if (message === 'ready') {
         log('worker ready, loading data');
         clearTimeout(timeoutId);
-        messageWorker('custom');
+        thisWorker.postMessage('custom');
         void loadEmojiLocale(userLocale);
         // Load English locale as well, because people are still used to
         // using it from before we supported other locales.
@@ -54,35 +55,20 @@ export function initializeEmoji() {
 async function fallbackLoad() {
   log('falling back to main thread for loading');
   const { importCustomEmojiData } = await import('./loader');
-  const emojis = await importCustomEmojiData();
-  if (emojis) {
-    log('loaded %d custom emojis', emojis.length);
-  }
+  await importCustomEmojiData();
   await loadEmojiLocale(userLocale);
   if (userLocale !== 'en') {
     await loadEmojiLocale('en');
   }
 }
 
-async function loadEmojiLocale(localeString: string) {
+export async function loadEmojiLocale(localeString: string) {
   const locale = toSupportedLocale(localeString);
-  const { importEmojiData, localeToPath } = await import('./loader');
 
   if (worker) {
-    const path = await localeToPath(locale);
-    log('asking worker to load locale %s from %s', locale, path);
-    messageWorker(locale, path);
+    worker.postMessage(locale);
   } else {
-    const emojis = await importEmojiData(locale);
-    if (emojis) {
-      log('loaded %d emojis to locale %s', emojis.length, locale);
-    }
+    const { importEmojiData } = await import('./loader');
+    await importEmojiData(locale);
   }
-}
-
-function messageWorker(locale: LocaleOrCustom, path?: string) {
-  if (!worker) {
-    return;
-  }
-  worker.postMessage({ locale, path });
 }
