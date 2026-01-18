@@ -35,20 +35,11 @@ const customizeHTML = (element: HTMLElement): void => {
     }
   };
 
-  const __changeTargetToTopIfNecessary = (element: HTMLElement): void => {
+  const __changeTargetFromBlankToTop = (element: HTMLElement): void => {
     const targetValue = element.getAttribute('target');
-    const lowercasedTargetValue = targetValue?.toLocaleLowerCase();
-    switch (lowercasedTargetValue) {
-      case '_blank':
-      case '_target': // Work around https://github.com/mastodon/mastodon/pull/34357
-        element.setAttribute('target', '_top');
-        debugLog(
-          `Changed target value from '${targetValue}' to '_top': `,
-          element,
-        );
-        break;
-      default:
-        break;
+    if (targetValue?.toLowerCase() === '_blank') {
+      element.setAttribute('target', '_top');
+      debugLog("Changed target value to '_top': ", element);
     }
   };
 
@@ -59,7 +50,7 @@ const customizeHTML = (element: HTMLElement): void => {
     }
   }
   __removeNoReferrer(element);
-  __changeTargetToTopIfNecessary(element);
+  __changeTargetFromBlankToTop(element);
 };
 
 // Initialize
