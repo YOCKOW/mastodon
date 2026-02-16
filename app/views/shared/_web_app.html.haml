@@ -9,15 +9,26 @@
   = vite_typescript_tag 'application.ts', crossorigin: 'anonymous'
   = vite_typescript_tag 'yockow-customization.ts', crossorigin: 'anonymous'
 
-  -# Google Analytics for yMastodon/ひあるびどん
-  / Google tag (gtag.js)
-  %script{ async: true, src: 'https://www.googletagmanager.com/gtag/js?id=G-BQP8FC60BJ' }
+  -# Google Tag Manager for yMastodon/ひあるびどん
+  / Google Tag Manager
   %script{ nonce: request.content_security_policy_nonce }
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-TKF8DMJP');
+  / End Google Tag Manager
 
-    gtag('config', 'G-BQP8FC60BJ');
+-# haml-lint:disable InlineStyles
+/ Google Tag Manager (noscript)
+%noscript
+  %iframe{
+    src: 'https://www.googletagmanager.com/ns.html?id=GTM-TKF8DMJP',
+    height: '0', width: '0',
+    style: 'display:none;visibility:hidden'
+  }
+/ End Google Tag Manager (noscript)
+-# haml-lint:enable InlineStyles
 
 .notranslate.app-holder#mastodon{ data: { props: Oj.dump(default_props) } }
   %noscript
