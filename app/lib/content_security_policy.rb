@@ -37,8 +37,8 @@ class ContentSecurityPolicy
     'https://www.google-analytics.com'
   end
 
-  def google_fonts_host
-    'https://fonts.googleapis.com'
+  def google_fonts_hosts
+    ['https://fonts.googleapis.com', 'https://fonts.gstatic.com']
   end
 
   private
