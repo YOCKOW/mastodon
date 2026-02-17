@@ -37,6 +37,10 @@ class ContentSecurityPolicy
     'https://www.google-analytics.com'
   end
 
+  def google_fonts_host
+    'https://fonts.googleapis.com'
+  end
+
   private
 
   def extra_media_hosts
