@@ -13,14 +13,14 @@ assets_host = policy.assets_host
 media_hosts = policy.media_hosts
 google_analytics_host = policy.google_analytics_host
 google_tag_manager_host = policy.google_tag_manager_host
+google_fonts_host = policy.google_fonts_host
 
 Rails.application.config.content_security_policy do |p|
   p.base_uri        :none
   p.default_src     :none
   p.frame_ancestors :none
-  p.font_src        :self, assets_host
+  p.font_src        :self, assets_host, google_fonts_host
   p.img_src         :self, :data, :blob, *media_hosts, google_tag_manager_host
-  p.style_src       :self, assets_host
   p.media_src       :self, :data, *media_hosts
   p.manifest_src    :self, assets_host
 
@@ -44,12 +44,12 @@ Rails.application.config.content_security_policy do |p|
     p.connect_src :self, :data, :blob, *media_hosts, Rails.configuration.x.streaming_api_base_url, *front_end_build_urls, google_analytics_host
     p.script_src  :self, :unsafe_inline, :unsafe_eval, assets_host, google_tag_manager_host
     p.frame_src   :self, :https, :http
-    p.style_src   :self, assets_host, :unsafe_inline
+    p.style_src   :self, assets_host, google_tag_manager_host, google_fonts_host, :unsafe_inline
   else
     p.connect_src :self, :data, :blob, *media_hosts, Rails.configuration.x.streaming_api_base_url, google_analytics_host
     p.script_src  :self, assets_host, google_tag_manager_host, "'wasm-unsafe-eval'"
     p.frame_src   :self, :https
-    p.style_src   :self, assets_host
+    p.style_src   :self, assets_host, google_tag_manager_host, google_fonts_host
   end
 end
 
