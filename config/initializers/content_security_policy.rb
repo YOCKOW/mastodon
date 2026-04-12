@@ -11,7 +11,7 @@ require_relative '../../app/lib/content_security_policy'
 policy = ContentSecurityPolicy.new
 assets_host = policy.assets_host
 media_hosts = policy.media_hosts
-google_analytics_host = policy.google_analytics_host
+google_analytics_hosts = policy.google_analytics_hosts
 google_tag_manager_host = policy.google_tag_manager_host
 google_fonts_hosts = policy.google_fonts_hosts
 
@@ -41,12 +41,12 @@ Rails.application.config.content_security_policy do |p|
       front_end_build_urls.push "ws://#{vite_public_host}"
     end
 
-    p.connect_src :self, :data, :blob, *media_hosts, Rails.configuration.x.streaming_api_base_url, *front_end_build_urls, google_analytics_host
+    p.connect_src :self, :data, :blob, *media_hosts, Rails.configuration.x.streaming_api_base_url, *front_end_build_urls, *google_analytics_hosts
     p.script_src  :self, :unsafe_inline, :unsafe_eval, assets_host, google_tag_manager_host
     p.frame_src   :self, :https, :http
     p.style_src   :self, assets_host, google_tag_manager_host, *google_fonts_hosts, :unsafe_inline
   else
-    p.connect_src :self, :data, :blob, *media_hosts, Rails.configuration.x.streaming_api_base_url, google_analytics_host
+    p.connect_src :self, :data, :blob, *media_hosts, Rails.configuration.x.streaming_api_base_url, *google_analytics_hosts
     p.script_src  :self, assets_host, google_tag_manager_host, "'wasm-unsafe-eval'"
     p.frame_src   :self, :https
     p.style_src   :self, assets_host, google_tag_manager_host, *google_fonts_hosts
