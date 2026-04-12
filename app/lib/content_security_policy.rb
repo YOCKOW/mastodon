@@ -33,8 +33,8 @@ class ContentSecurityPolicy
     'https://www.googletagmanager.com'
   end
 
-  def google_analytics_host
-    'https://www.google-analytics.com'
+  def google_analytics_hosts
+    ['https://www.google-analytics.com', 'https://www.google.com']
   end
 
   def google_fonts_hosts
