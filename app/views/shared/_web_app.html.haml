@@ -31,7 +31,7 @@
 / End Google Tag Manager (noscript)
 -# haml-lint:enable InlineStyles
 
-.notranslate.app-holder#mastodon{ data: { props: Oj.dump(default_props) } }
+.notranslate.app-holder#mastodon{ data: { props: default_props.to_json } }
   %noscript
     = image_tag frontend_asset_path('images/logo.svg'), alt: 'Mastodon'
 
