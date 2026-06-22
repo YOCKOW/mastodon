@@ -381,4 +381,10 @@ export default tseslint.config([
       '@typescript-eslint/prefer-nullish-coalescing': 'off',
     },
   },
+  {
+    files: ['app/javascript/inline/google-tag-manager.js'],
+    rules: {
+      eqeqeq: 'off',
+    },
+  },
 ]);

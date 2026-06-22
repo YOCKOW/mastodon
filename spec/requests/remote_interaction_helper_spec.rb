@@ -30,7 +30,7 @@ RSpec.describe 'Remote Interaction Helper' do
       default-src 'none';
       frame-ancestors 'self';
       form-action 'none';
-      script-src 'self' #{local_domain} https://www.googletagmanager.com 'wasm-unsafe-eval' 'nonce-3xIAsdni/UgmCyQD/AObWA==';
+      script-src 'self' #{local_domain} https://www.googletagmanager.com 'wasm-unsafe-eval';
       connect-src https:
     CSP
   end
