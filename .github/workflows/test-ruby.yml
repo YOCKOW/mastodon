@@ -61,11 +61,6 @@ jobs:
       - name: Precompile assets
         run: |-
           bin/rails assets:precompile
-          # https://github.com/mastodon/mastodon/issues/39410
-          if [[ "$RAILS_ENV" = "test" ]]; then
-            mkdir -p public/packs/
-            cp public/packs-test/sw.js* public/packs/
-          fi
 
       - name: Archive asset artifacts
         run: |
