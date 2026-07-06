@@ -23,7 +23,7 @@ RSpec.describe 'Content-Security-Policy' do
     <<~CSP.split("\n").map(&:strip)
       base-uri 'none'
       child-src 'self' blob: #{local_domain}
-      connect-src 'self' data: blob: #{local_domain} #{Rails.configuration.x.streaming_api_base_url} https://www.google-analytics.com https://www.google.com
+      connect-src 'self' data: blob: #{local_domain} #{Rails.configuration.x.streaming_api_base_url} https://www.google-analytics.com https://www.google.com https://www.googletagmanager.com
       default-src 'none'
       font-src 'self' #{local_domain} https://fonts.googleapis.com https://fonts.gstatic.com
       form-action 'none'
