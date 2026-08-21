@@ -41,8 +41,8 @@ Rails.application.config.content_security_policy do |p|
   next unless Rails.env.development?
 
   Rails.application.config.to_prepare do
-    vite_public_host = ENV.fetch('VITE_DEV_SERVER_PUBLIC', "localhost:#{ViteRuby.config.port}")
-    front_end_build_urls = %w(ws http).map { |protocol| "#{protocol}#{'s' if ViteRuby.config.https}://#{vite_public_host}" }
+    vite_public_host = ENV.fetch('VITE_DEV_SERVER_PUBLIC', "#{Vite.config.host}:#{Vite.config.port}")
+    front_end_build_urls = %w(ws http).map { |protocol| "#{protocol}#{'s' if Vite.config.https?}://#{vite_public_host}" }
     unless Rails.configuration.x.use_https
       front_end_build_urls.push "http://#{vite_public_host}"
       front_end_build_urls.push "ws://#{vite_public_host}"
