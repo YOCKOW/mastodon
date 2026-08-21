@@ -32,7 +32,7 @@ RSpec.describe 'Content-Security-Policy' do
       img-src 'self' data: blob: #{local_domain} https://www.googletagmanager.com
       manifest-src 'self' #{local_domain}
       media-src 'self' data: #{local_domain}
-      script-src 'self' #{local_domain} https://www.googletagmanager.com 'wasm-unsafe-eval' 'sha256-q/SWnE/9jQuX9vOQ/qiM3w0XvRMMMYWLB5aiIir8eCw=' 'sha256-Z5KW83D+6/pygIQS3h9XDpF52xW3l3BHc7JL9tj3uMs='
+      script-src 'self' #{local_domain} https://www.googletagmanager.com 'wasm-unsafe-eval' 'sha256-q/SWnE/9jQuX9vOQ/qiM3w0XvRMMMYWLB5aiIir8eCw=' 'sha256-OgOg5CGI7D4Syg38sNIknJKO+3DCTdpfY1ciC+Bklaw='
       style-src 'self' #{local_domain} https://www.googletagmanager.com https://fonts.googleapis.com https://fonts.gstatic.com 'nonce-ZbA+JmE7+bK8F5qvADZHuQ=='
       worker-src 'self' blob: #{local_domain}
     CSP
