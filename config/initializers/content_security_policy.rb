@@ -33,9 +33,16 @@ Rails.application.config.content_security_policy do |p|
   p.child_src  :self, :blob, assets_host
   p.worker_src :self, :blob, assets_host
 
-  if Rails.env.development?
-    vite_public_host = ENV.fetch('VITE_DEV_SERVER_PUBLIC', "localhost:#{ViteRuby.config.port}")
-    front_end_build_urls = %w(ws http).map { |protocol| "#{protocol}#{'s' if ViteRuby.config.https}://#{vite_public_host}" }
+  p.connect_src :self, :data, :blob, *media_hosts, Rails.configuration.x.streaming_api_base_url, *google_analytics_hosts
+  p.script_src  :self, assets_host, google_tag_manager_host, "'wasm-unsafe-eval'"
+  p.frame_src   :self, :https
+  p.style_src   :self, assets_host, google_tag_manager_host, *google_fonts_hosts
+
+  next unless Rails.env.development?
+
+  Rails.application.config.to_prepare do
+    vite_public_host = ENV.fetch('VITE_DEV_SERVER_PUBLIC', "#{Vite.config.host}:#{Vite.config.port}")
+    front_end_build_urls = %w(ws http).map { |protocol| "#{protocol}#{'s' if Vite.config.https?}://#{vite_public_host}" }
     unless Rails.configuration.x.use_https
       front_end_build_urls.push "http://#{vite_public_host}"
       front_end_build_urls.push "ws://#{vite_public_host}"
@@ -45,11 +52,6 @@ Rails.application.config.content_security_policy do |p|
     p.script_src  :self, :unsafe_inline, :unsafe_eval, assets_host, google_tag_manager_host
     p.frame_src   :self, :https, :http
     p.style_src   :self, assets_host, google_tag_manager_host, *google_fonts_hosts, :unsafe_inline
-  else
-    p.connect_src :self, :data, :blob, *media_hosts, Rails.configuration.x.streaming_api_base_url, *google_analytics_hosts
-    p.script_src  :self, assets_host, google_tag_manager_host, "'wasm-unsafe-eval'"
-    p.frame_src   :self, :https
-    p.style_src   :self, assets_host, google_tag_manager_host, *google_fonts_hosts
   end
 end
 
